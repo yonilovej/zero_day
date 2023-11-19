@@ -1,0 +1,280 @@
+Charles Severance 
+
+
+
+
+
+
+*Numeric Expressions 
+ + Addition 
+ _ Substraction
+ * Multiplication 
+ / Division
+ ** Power
+ % Remainder/Modul
+         
+     Example 
+   >>> jj = 23
+   >>> kk = jj % 5
+   >>> print(kk)
+   3
+   >>> print(4 ** 3)
+   64
+
+  Numeric Expressions 
+*Python understand "operator precedence" - which operator comes first () / * + - ===> Parenthesis, Power , Multiplication , Addition, left to right.
+*Python knows the difference between an integer number and a string.
+*For example "+" means "addition" if something is a number and "concatenate" if something is a string.
+ 
+ Type conversions. 
+*Python knows what "type" everything is. 
+*We can ask Python what type something is by using the  type() function.
+*when you put and integer and floating point in an expression, the integer is implicityly converted to a float. 
+*you can control this with the built-in functions int()  and float() 
+    Example 
+    >>> print( float(99) + 100)
+    199.0
+    >>> i = 42
+    >>> type(i)
+    <class 'int'>
+    >>> f = float(i)
+    >>> print(f)
+    42.0
+    >>> type(f)
+    <class'float'>
+    >>>
+
+  Integer Division 
+*Integer division produces a floating point result in 3.0 version of python. 
+
+   User Input 
+*We can instruct Python to pause and read data from the user using the input() function.
+*The input() function returns a string. 
+    Example 
+  name = input('who are you? ')
+  print('welcome', name)
+
+  Conditional statment
+*Python use a tab for show a sub command. this is used in the case of if statmetn. 
+    Example 
+ x = 5
+ if x < 10:
+    print('Smaller')
+ if x > 20:
+    print('Bigger')
+ print('Finis)
+
+*operators  <, <=, ==(equal to) , >= ,> ,!= 
+*Nested indentation 
+    Example 
+   x = 4 
+   if x < 10 :
+     print('true')
+       if x > 3 :
+          print('true')
+   Print('nexted indentation')
+
+*else
+  x = 4 
+  if x > 2:
+    print('Bigger')
+  else:
+    print('Smaller')
+  print('All done')
+
+  conditional multi-way
+  Example 
+ if x < 2 :
+   print('small')
+ elif x < 10 :
+   print('medium')
+ else :
+   print('Large')
+ print('All done')
+
+  Example
+ if x < 2 :
+   print('Below 2')
+ elif x >= 2 :
+   print('Two or more')
+ else :
+   print('something else')
+
+   #what ever the value of x is the last else statmetn will not run
+
+  Example 
+ if x < 2 :
+     print('Below 2')
+ elif x < 20 :
+     print('Below 20')
+ elif x < 10 :
+     print('Below 10')
+ else :
+     print('Somthing else')
+
+ #in this condition if x is 6 it will print Below 20 and jump Below 10
+
+try/except structure
+* you surround a dangerous section of code with try and except 
+* if the code in the try works - the except is skipped
+* if the code in the try fails - it jumps to the except section
+
+    Example 
+rawstr = input('Enter a number :')
+try:
+    ival = int(rawstr)
+except:
+    ival = -1
+
+if ival > 0 :
+   print('Nice work')
+else :
+   print('Not a number')
+
+   Example
+astr = 'Hello Bob'
+try:
+  istr = int(aster)
+except:
+  inst = -1
+print('First', inst)
+astr = '123'
+try:
+  inst = int(astr)
+except:
+  instr = -1
+print('second', instr)   #when the second conversion succeeds - it just skips the except: clause and the program continues.
+                         #if you put more than one line of code in try clause and if some issue happend it will jump all lines and execute except: clause and don't come back for the reset of the line.
+
+    Example 
+astr = 'Bob'
+try:
+ print('Hello')
+ istr = int(astr)
+ print('There')   #because the above line of code do have issue it will stop an go to except: clause and never come back to excute this line.
+except:
+ istr = -1
+print('Done', istr)
+
+  Summary 
+-Comparison operators   == <= >= < > ! =
+-Indentation 
+-One-way Decisions 
+-Two-way decisions: if: and else:
+-Nested Decissions 
+-Multi-way decisions using elif
+-try / ecept to compensate for errors
+
+    Chapter 4
+    Functions 
+*Stored (and reused) steps
+   Example 
+  def thing() :        #function defind
+      print('Hello')
+      print('Fun')
+
+  thing()                #function invoced 
+  print('Zip')
+  thing()                 #reused #the output is like    ----- Hello  Fun   Zip  Hello  Fun
+
+
+*There are two kinds of functions in Python.
+  - Built-in functions that are provided as part of python- print(),input(), type(), float(), int()...
+  -Functions that we define ourselves and then use
+*We treat the built-in function names as "new" reserved words(i.e. we aovid them as variable name)
+*In Python a function is some reusable code that takes arguments(s) as input, does some computation , and then returns a result or results
+*We define a function using the def reserved word
+*We call/invoke the function by using the function name, parentheses , and arguments in an expression.
+*def keyword in Python it indicates the start of function, and the following indented section of code is to be stored for later.
+   Example 
+big = max('Hello world')     #this is assignmetn statment 
+print(big)     #output is w
+
+tiny = min('Hello world')
+print(tiny)    #output is space " "
+
+*type conversions 
+-when you put an ineger and floating point in an expression, the integer is implicitly converted to a float
+-use built - in fucntions int() and float()
+  
+Example
+print float(99) / 100
+0.00
+i =42
+type(i)
+'int'
+
+String conversions
+*input function returns string. 
+
+   Example
+sval = '123'
+type(sval)
+<class 'str'>
+print(sval + 1)    #this will generate an error.
+
+
+ival = int(sval)
+type(ival)
+<class 'int'>
+print(ival + 1)
+124
+nav = 'hello bob'
+niv = int(nav)    #this will generate an error.
+
+Argument and Parameter
+   Example
+def greet(lang):         #argument at the same time parameter
+    if lang == 'es':
+        print('Hola')
+    elif lang == 'fr':
+        print('Bonjour')
+    else:
+        print('Hello')
+greet('en')     #Hello
+greet('es')     #Hola
+greet('fr')     #Bonjour
+
+   Return Values
+* The return statement ends the function execution and send bank teh result of the function
+ Example
+ def greet():
+    return "Hello"
+
+print(greet(), "Glenn")       # Hello Glenn
+print(greet(), "sally")       # Hello Sally
+
+*Return Value
+  Example 
+def greet(lang):
+    if lang == 'es':
+       return 'Hola
+    elif lang == 'fr':
+       return 'Bonjour'
+    else:
+       return 'Hello'
+print(greet('en'), 'Glenn')    #Hello Glenn
+print(greet('es'), 'Sally')    #Hola Sally
+print(greet('fr'), 'Michael')  #Bonjour Michael
+
+Multiple parameters / Arguments 
+   Example
+def addtwo(a,b):
+    added = a + b
+    return added
+
+x = addtwo(3,5)
+print(x)      # 8
+
+
+* when a function does not return a value, we all it a "void" function
+
+
+Summary 
+-Arguments 
+-Results (fruitful functions)
+-Void (non-fruitful) functions
+-why use functions?
+-Functions
+_built-in Functions =>type conversion(int, float0 String conversions
+-parameters
