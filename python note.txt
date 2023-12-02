@@ -440,3 +440,64 @@ C:\Users\yonas.behailu\Desktop\pay_by_link
 -Largest or smallest 
 
 
+
+                  Charpter - 6
+                    Strings 
+*A string is a sequence of characters 
+*A string literal uses quotes 'Hello' or "Hello"
+*For strings + means "concatenate"
+*when a string contains numbers, it's still a string
+*We can convert numbers in a string into a number using int()
+
+    Example
+ >>>str1 = "Hello"
+ >>>str2 = 'there'
+ >>>bob = str1 + str2  
+ >>>print(bob)    # Hello there
+ >>>str3 = '123'
+ >>>str3 = str3 + 1    #this will generate error typeerror: cannot concatenate 'str' and 'int' bojects 
+ >>> x = int(str3) + 1
+ >>> print(x)   #124 
+
+Looking inside strings 
+*we can get at any single character in a string using an index 
+*The index value must be an integer and starts at zero
+*The index value can be an expression that is computed 
+   Example 
+fruit = 'banana'
+letter = fruit[1]
+print(letter)  #a
+x = 3 
+w = fruite[x - 1]
+print(w) #n
+
+*A character too far 
+  Example 
+zot = 'abc'
+print(zot[5])   #IndexError: string index out of range
+
+
+*Strings have length
+-The built-in function len gives us the length of a string
+  Example 
+fruit = 'banana'
+print(len(fruit))   # 6 
+
+
+*Looping through strings
+-Using a while statement and an iteration variable, and the len function, we can construct a loop to look at each of the letters in a string individually
+   Example
+fruit = 'banana'
+index = 0
+while index < len(fruit):
+   letter = fruit[index]
+   print(index, letter)
+   index = index + 1
+
+*A definite loop using a for statement is much more elegant
+*The iteration variable is completely taken care of by the for loop 
+  Example 
+fruit = 'banana'
+for letter in fruit:
+  print(letter)   # b a n a n a 
+
