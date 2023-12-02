@@ -278,3 +278,134 @@ Summary
 -Functions
 _built-in Functions =>type conversion(int, float0 String conversions
 -parameters
+
+ Chapter 5
+   Loops and Iterations.
+while loop
+     Example 
+n = 5 
+while n > 0 :
+   print(n)
+   n = n - 1 
+print('Blastoff')
+print(n)
+
+*Loops(repeated steps) have iteration variables that change each time through a loop. Often these iteration variables go though a sequence of numbers. 
+
+Breaking out of a loop
+*the break statement ends the current loop and jumpls to the statement immediately following the loop
+    Example 
+while True:
+    line = input('>)
+    if line == 'done':
+        break
+    print(line)
+print('Done')
+
+*Loop Idioms: 
+   set some variables to 
+      initial values 
+
+  FOR thing IN DATA:
+     Look for something or 
+     do something to each 
+     enty separately
+     updating a variable 
+
+ Look at the variables
+
+    Example 
+print('Before')
+for thing in [9, 41, 12, 3, 74, 15]:
+    print(thing)
+print('After')
+
+   Example
+ Finding the largest value
+largest_so_far = -1
+print('Before', largest_so_far)
+for the_num in [9, 41, 12,3,74,15]
+     if the_num > largest_so_far
+        largest_so_far = the_num
+     print(largest_so_far, the_num)
+print('After', largest_so_far)   #Before -1  9 9  41 41   41 12   41 3   74 74   74 15   After 74
+
+
+  Example 
+ Finding the largest value
+numbers = [3, 89, 99, 7, 88, 22, 27]
+max_number = max(numbers)
+print(max_number)
+
+*Counting in a Loop
+*To count how many times we execute a loop, we introduce a counter variable that starts at 0 and we add one to it each time though the loop.
+   Example
+zork = 0
+print('Before', zork)
+for thing in [9, 41 ,12 , 3 , 74, 15] :
+   zork = zork + `
+   print(zork, thing)
+pint('after', zork)
+
+*Summing in a Loop 
+To add up a value we envounter in a loop, we introduce a sum variable that start at 0 and we add the value to the sum each time though the loop 
+  
+   Example
+zork = 0 
+print('before', zork)
+for thing in [9, 41, 12, 3, 74, 15] :
+   zork = zork + thing
+   print(zork, thing)
+print('after', zork)
+
+*Finding the Average in a Loop
+An average just combines the counting and sum patterns and divides when the loop is done.
+  Example 
+count = 0 
+sum = 0 
+print('before', count, sum)
+for value in [9, 41, 12, 3, 74, 15] :
+   count = count + 1
+   sum = sum + value
+   print(count, sum, value)
+print('after', count, sum, sum/count)
+
+*Filtering in a Loop
+we use an if statement in the loop to catch / filter the values we are looking for 
+  Example 
+print('before')
+for value in [9, 41, 12, 3, 74, 15] :
+   if value > 20:
+       print('Large number ', value)
+print('after')
+
+*Search using a Boolean variable
+if we just want to search and know if a value was found, we use a variable that strts at False and is seet to True as soon as we find wwhat we are looking for                    
+   Example
+found = false
+print('before', found)
+for value in [9, 41, 12, 3, 74, 15] :
+    if value == 3 :
+       found = true 
+    print(found, value)
+print('after', found)
+
+
+
+C:\Users\yonas.behailu\Desktop\pay_by_link
+
+    WRITE THE EXAMPLES IN SESSION 05-ITERATION 
+
+
+   Summary 
+-while loops(indefinete)
+-infinite loops 
+-using break
+-using continue
+-None constants and variables
+-For loops (definite)
+-iteration variables
+-Loop idioms 
+-Largest or smallest 
+
+
