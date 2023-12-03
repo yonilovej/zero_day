@@ -386,7 +386,7 @@ for value in [9, 41, 12, 3, 74, 15] :
 print('after')
 
 *Search using a Boolean variable
-if we just want to search and know if a value was found, we use a variable that strts at False and is seet to True as soon as we find wwhat we are looking for                    
+if we just want to search and know if a value was found, we use a variable that strts at False and is set to True as soon as we find what we are looking for                    
    Example
 found = false
 print('before', found)
