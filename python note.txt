@@ -644,3 +644,128 @@ print(host)    #uct.ac.za
 -Searching in strings
 -Replacing text
 -Stripping white space
+
+ Chapter -7-
+                                 Reading Files
+    Opening File
+#Before we can read the contents of the file, we must tell Python which file we are going to work with and what we will be doing with the file.
+#This is done with the open() function
+#open() returns a "file handle" - a variable used to perform operations on the file
+#similar to "File ->open" in a word processor.
+ 
+    Using open()
+# handle = open(filename, mode)
+   fhand = open('mbox.txt', 'r')
+#returns a handle use to manipulate the file
+#filename is a string
+#mode is optional and should be 'r' if we are planning to read the file and 'w' if we are going to write to the file 
+
+   The newline Character 
+#We use a special character called the "newline" to indicate when a line ends 
+    Example 
+stuff = "Hello\nWorld!'
+print(stuff)    # Hello 
+                  World 
+
+#We represent it as \n in strings 
+#newline is still one charactr - not two 
+      Example
+staff = 'X\nY'
+len(stuff)   #3 
+
+#A text file has newlines at the end of each line 
+
+  File Handle as a Sequence 
+#A file handle open for read can be treated as a sequence of stings where each line in the file is a string in the sequence
+#We can use the for statement to iterate through a sequence 
+#Remember - a sequence is an ordered set 
+
+  Example
+xfile = open('mbox.txt')
+for cheese in xfile:
+   print(cheese)
+
+
+   Counting Line in a file 
+#Open a file read-only
+#use a for loop to read each line 
+#Count the lines and print out the number of lines
+
+     Example
+fhand = open('mbox.txt')
+count = 0 
+for line in fhand:
+   count = count + 1
+print('Line Count:', count)
+
+
+   Reading the *whole* file 
+#We can read the whole file(newlines and all) into a single string
+
+   Example 
+fhand = open('mbox-short.txt')
+inp = fhand.read()
+print(len(inp))   #94626 
+print(inp[:20])   #this will give you the first 20 character 
+
+  Searching Through a file
+#We can put an if statment in our for loop to only print lines that meet some criteria 
+   
+     Example
+fhand = open('mbox-short.txt')
+for line in fhand:
+   if line.startswith('From:'):
+      print(line)
+
+#fixing the new line problem. 
+-We can strip the whitespace from the right-hand side of the string using rstrip() form the sstring library
+-The newline is considered "white space" and is stripped 
+    Example 
+fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if line.startswith('From:') :
+      print(line)
+
+  Skipping with continue
+#We can conveniently skip a line by using the continue statement 
+   Example 
+fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith('From:') :
+        continue
+    print(line)
+
+   Using in to select lines 
+#We can look for a string anywhere in a line as our selection criteria 
+    Example
+fhand = open('mbox-short.txt')
+for line in fhand:
+   line = line.tstrip()
+   if not 'From:' in line:
+     continue
+   print(line)
+
+#prompt to enter the file name and read the file 
+     Example 
+fname = input('Enter the file name: ')
+try:
+     fhand = open(fname)
+except: 
+     print('File cannot be opened:', fname)
+     quit()
+count = 0 
+for line in fhand:
+   if line.startswith('Subject:') :
+       count = count + 1
+print('There were', count, 'subject line in ', fname)
+
+  Summary 
+-Secondary Storage
+-Opening a file -file handle
+-File structure - newline character 
+-Reading a file line by line with a for loop
+-Searching for lines 
+-Reading file names 
+-Dealing with bad files
