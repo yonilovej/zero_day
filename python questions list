@@ -1,0 +1,12 @@
+Question 
+
+1. concatinat two string "Hello" and "There" .
+2. convert str1 to number and add with 9.
+3. what is the first letter from the word Banana.
+4. count the letter Banana.
+5. loop though word Banana and display each alphabet using while
+6. do the above question with for loop
+7. loop and count letter 'a' in the word 'banana'
+8. print only "python" from the sentence "Monty python" using slicing string.
+9. check if 'a' exist in 'banana' using in operator 
+10. compare the user input password with stored password and display correct or wrong.
