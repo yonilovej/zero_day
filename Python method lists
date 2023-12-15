@@ -1,0 +1,19 @@
+String methods 
+
+1. str.title()
+2. str.capitalize()
+3. str.upper() 
+4. str.lower()
+5. str.replace(old, new)
+6. str.strip()
+7. srt.split()
+8. str.join()  -- --- ' '.join(str)
+
+
+
+
+List 
+1. list.append(x):
+2. 
+3.
+4.......
