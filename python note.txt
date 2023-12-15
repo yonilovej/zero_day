@@ -769,3 +769,265 @@ print('There were', count, 'subject line in ', fname)
 -Searching for lines 
 -Reading file names 
 -Dealing with bad files
+
+ Python Lists 
+                                   Chapter 8
+
+# Algorithms - A set of rules or steps used to solve a problem 
+# Data Structures - A particular way of organizing data in a computer 
+
+ What is not a "Collection"
+#Most of our Variables have one value in them - when we put a new value in the variable, the old value is overwritten
+   
+  A list is a kind of Collection
+# A collection allows us to put many values in a single "variable"
+# A collection is nice because we can carry all many values around in one convenient package
+   Example 
+  friends = [ 'Joseph', 'Glenn', 'Sally' ]
+  carryon = [ 'socks', 'shirt', 'perfume']
+
+   List Constants 
+#List constants are surrounded by square brackets and the elements in the list are separated by commas
+#A list element can be any Python object-even another list 
+#A list can be empty 
+     Example 
+ print([1, 24, 76])   # [1, 24, 76]
+ print(['red', 'yellow', 'blue'])  # ['red', 'yellow', 'blue']
+ print(['red', 24, 98.6]) #['red', 24, 98.6]
+ print([1, [5, 6], 71]) #[1, [5, 6], 71]
+ print([])  #[]
+
+     Example 
+for i in [5, 4, 3, 2, 1] :
+   print(i)
+print('Blastoff!')    #5  4  3  2  1  Blastoff!
+
+    Example 
+friends = ['Joseph', 'Glenn', 'Sally']
+for frined in friends :
+   print("Happy New Year ", friend)
+print("Done")
+
+  Looking Inside Lists
+#Just like strings, we can get at any single element in a list using an index specified in square barckets 
+   Example
+frineds = ['Joseph', 'Glenn', 'Sally']
+print(frinends[1])   # Glenn
+
+  Lists are Mutable(they can be changed)
+#Strings are "immutable" We cannot change the contents of a string- we must make a new string to make any change
+#Lists are "mutable" - we can change an element of a list using the index operator 
+   Example 
+fruit = 'Banana'
+fruit[0] = 'b'
+#this will generate error 
+
+x = fruit.lower()
+print(x)   #banana
+
+lotto = [2, 14, 26, 41,63]
+print(lotto)  # [2, 14, 26, 41,63]
+lotto[2] = 28 
+print(lotto)  #[2, 14, 28, 41,63]
+
+  How Long is a List 
+#The len() function takes a list as a parameter and returns the number of elements in a list 
+#Actually len() tells us the number of elements of any set or sequence (such as astring...)
+     Example 
+greet = 'Hello Bob'
+print(len(greet))  # 9 
+x = [1, 2, 'joe', 99]
+print(len(x))  #4
+
+
+  Using the rage function
+#The range function returns a list of numbers that rage from zero to one less than the parameter 
+#We can construct an index loop using for and an integer iterator 
+   Example 
+print(rage(4))  #[0, 1, 2, 3]
+friends = ['Joseph', 'Gleen', 'Sally']
+print(len(frineds))  # 3 
+print(rage(len(friends))))  #[0, 1, 2]
+
+
+     Examples
+The tale of two loops....
+frineds = ['Joseph', 'Glenn', 'Sally']
+
+for friend in friends :
+  print('Happy New Year: ', friend)
+
+
+for i in rage(len(frineds)) :      
+   friend = frineds[i]
+   print('Happy New Year :', frined)
+
+   Concatenating lists using +
+#we can create a new list by adding two existing lists together 
+    Example 
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = a + b
+print(c)    # [1, 2, 3, 4, 5, 6]
+print(a)    # [1, 2, 3]
+
+
+ Lists can be Sliced using : 
+#Just like in strings, the second number is "up to but not includeding"
+
+    Example 
+t = [9, 41, 12, 3, 74, 15]
+print(t[1:3])    # 41, 12 
+print(t[:4])     # 9, 41, 12, 3 
+print(t[3:])     #3, 74, 15
+print(t[:])      #9, 41, 12, 3, 74, 15
+
+  List Methods
+    Example 
+x = list()
+type(x)     #<type 'list'>
+dir(x)      #['append', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+  Buliding a List from Scratch
+#We can create an empty list and then add elements using the append method
+#The list stays in order and new elements are added at the end of the list
+
+     Example 
+stuff = list()
+stuff.append('book')
+stuff.append(99)
+print(stuff)     #['book', 99]
+stuff.append('cookie')
+print(stuff)     #['book', 99, 'cookie'] 
+
+   Is Somthing in a List?
+#Python provides two operators that let you check if an item is in a list
+#These are logical operators that return True of False 
+#They do not modify the list 
+
+    Example 
+some = [1, 9 ,21, 10, 16]
+9 in some    # True 
+15 in some   #False 
+20 not in some  #True
+
+ Lists are in Order 
+#A list can hold many items and keeps those items in the order until we do something to change the order 
+#A list can be sorted (i.e, change it's order)
+#The sort method( unlike in strings) means "sort yourself"
+    Example
+friends = ['Joseph', 'Gleen', 'Sally']
+friends.sort()
+print(friends)    # Gleenn, Joseph , Sally
+
+  Built-in Functions and Lists 
+#There are a number of Functions built into Python that take lists as patameters 
+#Remember the loops we built? there are much simpler.
+   Example 
+nums = [3, 41, 12, 9, 74, 15]
+print(len(nums))   # 6 
+print(max(nums))   #74
+print(min(nums))   #3
+print(sum(nums))   #154
+print(sum(nums)/len(nums))   #25.6 
+
+   Two code that list values
+   Example 
+  #using normal way 
+tatal = 0 
+count = 0 
+while True :
+   inp = input('Enter a number: ')
+   if inp == 'done' : break
+   value = float(inp)
+   total = total + value
+   count = count + 1 
+average = total / count 
+print('Average: ', average)
+
+  #using list 
+numlist = list()
+while True :
+   inp = input('Enter a number: ')
+   if inp == 'done' : break
+   value = float(inp)
+   numlist.append(value)    # this is where it appends all new values
+average = sum(numlist) / len(numlist)
+print('Average: ', average)
+
+
+    Create Python virtual Enviroment 
+#on the terminal 
+>python -m venv env       #this command will create   a separate directory containing /include   /lib   /scripts
+
+#to set script execution on window   === Set-ExecutionPolicy RemoteSigned -Scope Process   for more ref(https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2)
+
+>activate    this will activate the python virtual enviroment 
+>deactivate  this will deactivate the pthon virtual enviroment 
+
+# To install package 
+>pip install python-dateutil     - this line install date utilil package 
+
+>pip means python package index 
+
+>pip freeze  - to see installed packages 
+>pip uninstall python-dateutil    - to clean up unused package
+      
+      #Strings and Lists
+    
+       Example
+abc = 'With three words'
+stuff = abc.split()
+print(stuff)    # ['with', 'three', 'words']
+print(len(stuff))  # 3 
+print(stuff[0])    #With 
+
+for w in stuff:
+  print(w)    #with    three  words
+
+#Split breaks a string into parts and produces a list of stings. We think of these as words. We can access a particular or loop though all the words.
+#When you do not specigy a delimiter, multiple spaces are treated like one delimiter
+#You can specify what delimiter character to use in the splitting
+     Example
+line = 'A lot             of spaces'
+etc = line.split()  
+print(etc)   #['A', 'lot', 'of', 'spaces']
+line = 'first;second;third'
+thing = line.split()
+print(thing)    #['first;second;third']
+print(len(thing))  #1
+thing = line.split(';')
+print(thing) #['first', 'second', 'third']
+print(len(thing))  #3
+
+
+   Example
+From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
+to print the date from this email document
+
+fhand = open('mbox-short.txt')
+for line in fhand: 
+  line = line.rstrip()
+  if not line.startswith('From') : continue
+  words = line.split()
+  print(words[2])    # Sat    Fri    Fri   Fri......
+
+#to separately print the host form the above email document detail
+    Example  #this method is much more better than using find comand
+words = line.split()   
+email = words[1]             ---stephen.marquard@uct.ac.za
+pieces = email.split('@')    ---['stephen.marquard', 'uct.ac.za']
+print(pieces[1])   # uct.ac.za     
+
+
+     List Summary
+-Concept of a collection
+-Lists and definite loops
+-Indexing and lookup
+-List mutability
+-Functions: len, min, max, sum
+-Slicing lists
+-List methods: append, remove
+-Sorting lists
+-Spliting stings into lists of words
+-Using split to parse stings
